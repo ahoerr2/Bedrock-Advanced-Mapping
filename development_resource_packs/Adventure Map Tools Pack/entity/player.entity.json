@@ -1,0 +1,15 @@
+
+"geometry": {
+  "pedestal_block": "pedestal_block.geo"
+},
+"textures": {
+  "pedestal_block": "textures/models/pedestal_block"
+},
+"pre_animation": [
+  "variable.pedestal_block = query.get_equipped_item_name('main_hand') == 'pedestal_block';"
+],
+"render_controllers": [
+  {
+    "controller.render.pedestal_block": "variable.pedestal_block"
+  }
+]

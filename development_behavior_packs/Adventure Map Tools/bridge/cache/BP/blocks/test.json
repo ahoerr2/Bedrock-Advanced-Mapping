@@ -1,0 +1,1369 @@
+{
+	"file_path": "C:\\Users\\ahoer\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs\\Adventure Map Tools\\blocks\\test.json",
+	"file_type": "block",
+	"format_version": 1,
+	"file_uuid": "8a8f490c_5355_4cac_a252_ea3ea0fbaa36",
+	"file_version": 0,
+	"cache_content": {
+		"children": [
+			{
+				"data": "1.16.100",
+				"key": "format_version"
+			},
+			{
+				"open": {
+					"format_version": "1.16.100",
+					"minecraft:block": {
+						"description": {
+							"identifier": "bridge:test",
+							"is_experimental": false,
+							"properties": {
+								"bridge:crop_growth": [
+									0,
+									1,
+									2,
+									3,
+									4
+								]
+							}
+						},
+						"components": {
+							"minecraft:ticking": {
+								"looping": true,
+								"range": [
+									25,
+									45
+								],
+								"on_tick": {
+									"target": "self",
+									"event": "bridge:grow",
+									"condition": "query.block_property('bridge:crop_growth') < 4"
+								}
+							},
+							"minecraft:geometry": "geometry.crop",
+							"minecraft:block_light_absorption": 0,
+							"minecraft:entity_collision": false,
+							"minecraft:breakonpush": true,
+							"minecraft:placement_filter": {
+								"conditions": [
+									{
+										"block_filter": [
+											"farmland"
+										],
+										"allowed_faces": [
+											"up"
+										]
+									}
+								]
+							},
+							"minecraft:destroy_time": 0,
+							"minecraft:loot": "loot_tables/test_loot_not_grown.json"
+						},
+						"permutations": [
+							{
+								"condition": "query.block_property('bridge:crop_growth') == 0",
+								"components": {
+									"minecraft:pick_collision": {
+										"origin": [
+											-5,
+											0,
+											-5
+										],
+										"size": [
+											10,
+											2,
+											10
+										]
+									},
+									"minecraft:material_instances": {
+										"*": {
+											"texture": "bridge_test_0",
+											"render_method": "alpha_test"
+										}
+									}
+								}
+							},
+							{
+								"condition": "query.block_property('bridge:crop_growth') == 1",
+								"components": {
+									"minecraft:material_instances": {
+										"*": {
+											"texture": "bridge_test_1",
+											"render_method": "alpha_test"
+										}
+									},
+									"minecraft:pick_collision": {
+										"origin": [
+											-5,
+											0,
+											-5
+										],
+										"size": [
+											10,
+											3,
+											10
+										]
+									}
+								}
+							},
+							{
+								"condition": "query.block_property('bridge:crop_growth') == 2",
+								"components": {
+									"minecraft:material_instances": {
+										"*": {
+											"texture": "bridge_test_2",
+											"render_method": "alpha_test"
+										}
+									},
+									"minecraft:pick_collision": {
+										"origin": [
+											-7,
+											0,
+											-7
+										],
+										"size": [
+											14,
+											6,
+											14
+										]
+									}
+								}
+							},
+							{
+								"condition": "query.block_property('bridge:crop_growth') == 3",
+								"components": {
+									"minecraft:material_instances": {
+										"*": {
+											"texture": "bridge_test_3",
+											"render_method": "alpha_test"
+										}
+									},
+									"minecraft:pick_collision": {
+										"origin": [
+											-7,
+											0,
+											-7
+										],
+										"size": [
+											14,
+											10,
+											14
+										]
+									}
+								}
+							},
+							{
+								"condition": "query.block_property('bridge:crop_growth') == 4",
+								"components": {
+									"minecraft:material_instances": {
+										"*": {
+											"texture": "bridge_test_4",
+											"render_method": "alpha_test"
+										}
+									},
+									"minecraft:on_interact": {
+										"target": "self",
+										"event": "bridge:harvest"
+									},
+									"minecraft:pick_collision": {
+										"origin": [
+											-7,
+											0,
+											-7
+										],
+										"size": [
+											14,
+											14,
+											14
+										]
+									}
+								}
+							}
+						],
+						"events": {
+							"bridge:grow": {
+								"randomize": [
+									{
+										"set_block_property": {
+											"bridge:crop_growth": "query.block_property('bridge:crop_growth') + 1"
+										},
+										"weight": 1
+									},
+									{
+										"weight": 1
+									}
+								]
+							},
+							"bridge:harvest": {
+								"set_block_property": {
+									"bridge:crop_growth": 2
+								},
+								"spawn_loot": {
+									"table": "loot_tables/test_loot_grown.json"
+								}
+							}
+						}
+					}
+				},
+				"key": "minecraft:block",
+				"children": [
+					{
+						"open": {
+							"description": {
+								"identifier": "bridge:test",
+								"is_experimental": false,
+								"properties": {
+									"bridge:crop_growth": [
+										0,
+										1,
+										2,
+										3,
+										4
+									]
+								}
+							},
+							"components": {
+								"minecraft:ticking": {
+									"looping": true,
+									"range": [
+										25,
+										45
+									],
+									"on_tick": {
+										"target": "self",
+										"event": "bridge:grow",
+										"condition": "query.block_property('bridge:crop_growth') < 4"
+									}
+								},
+								"minecraft:geometry": "geometry.crop",
+								"minecraft:block_light_absorption": 0,
+								"minecraft:entity_collision": false,
+								"minecraft:breakonpush": true,
+								"minecraft:placement_filter": {
+									"conditions": [
+										{
+											"block_filter": [
+												"farmland"
+											],
+											"allowed_faces": [
+												"up"
+											]
+										}
+									]
+								},
+								"minecraft:destroy_time": 0,
+								"minecraft:loot": "loot_tables/test_loot_not_grown.json"
+							},
+							"permutations": [
+								{
+									"condition": "query.block_property('bridge:crop_growth') == 0",
+									"components": {
+										"minecraft:pick_collision": {
+											"origin": [
+												-5,
+												0,
+												-5
+											],
+											"size": [
+												10,
+												2,
+												10
+											]
+										},
+										"minecraft:material_instances": {
+											"*": {
+												"texture": "bridge_test_0",
+												"render_method": "alpha_test"
+											}
+										}
+									}
+								},
+								{
+									"condition": "query.block_property('bridge:crop_growth') == 1",
+									"components": {
+										"minecraft:material_instances": {
+											"*": {
+												"texture": "bridge_test_1",
+												"render_method": "alpha_test"
+											}
+										},
+										"minecraft:pick_collision": {
+											"origin": [
+												-5,
+												0,
+												-5
+											],
+											"size": [
+												10,
+												3,
+												10
+											]
+										}
+									}
+								},
+								{
+									"condition": "query.block_property('bridge:crop_growth') == 2",
+									"components": {
+										"minecraft:material_instances": {
+											"*": {
+												"texture": "bridge_test_2",
+												"render_method": "alpha_test"
+											}
+										},
+										"minecraft:pick_collision": {
+											"origin": [
+												-7,
+												0,
+												-7
+											],
+											"size": [
+												14,
+												6,
+												14
+											]
+										}
+									}
+								},
+								{
+									"condition": "query.block_property('bridge:crop_growth') == 3",
+									"components": {
+										"minecraft:material_instances": {
+											"*": {
+												"texture": "bridge_test_3",
+												"render_method": "alpha_test"
+											}
+										},
+										"minecraft:pick_collision": {
+											"origin": [
+												-7,
+												0,
+												-7
+											],
+											"size": [
+												14,
+												10,
+												14
+											]
+										}
+									}
+								},
+								{
+									"condition": "query.block_property('bridge:crop_growth') == 4",
+									"components": {
+										"minecraft:material_instances": {
+											"*": {
+												"texture": "bridge_test_4",
+												"render_method": "alpha_test"
+											}
+										},
+										"minecraft:on_interact": {
+											"target": "self",
+											"event": "bridge:harvest"
+										},
+										"minecraft:pick_collision": {
+											"origin": [
+												-7,
+												0,
+												-7
+											],
+											"size": [
+												14,
+												14,
+												14
+											]
+										}
+									}
+								}
+							],
+							"events": {
+								"bridge:grow": {
+									"randomize": [
+										{
+											"set_block_property": {
+												"bridge:crop_growth": "query.block_property('bridge:crop_growth') + 1"
+											},
+											"weight": 1
+										},
+										{
+											"weight": 1
+										}
+									]
+								},
+								"bridge:harvest": {
+									"set_block_property": {
+										"bridge:crop_growth": 2
+									},
+									"spawn_loot": {
+										"table": "loot_tables/test_loot_grown.json"
+									}
+								}
+							}
+						},
+						"key": "description",
+						"is_minified": true,
+						"children": {
+							"identifier": "bridge:test",
+							"is_experimental": false,
+							"properties": {
+								"bridge:crop_growth": [
+									0,
+									1,
+									2,
+									3,
+									4
+								]
+							}
+						}
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "bridge:test",
+								"is_experimental": false,
+								"properties": {
+									"bridge:crop_growth": [
+										0,
+										1,
+										2,
+										3,
+										4
+									]
+								}
+							},
+							"components": {
+								"minecraft:ticking": {
+									"looping": true,
+									"range": [
+										25,
+										45
+									],
+									"on_tick": {
+										"target": "self",
+										"event": "bridge:grow",
+										"condition": "query.block_property('bridge:crop_growth') < 4"
+									}
+								},
+								"minecraft:geometry": "geometry.crop",
+								"minecraft:block_light_absorption": 0,
+								"minecraft:entity_collision": false,
+								"minecraft:breakonpush": true,
+								"minecraft:placement_filter": {
+									"conditions": [
+										{
+											"block_filter": [
+												"farmland"
+											],
+											"allowed_faces": [
+												"up"
+											]
+										}
+									]
+								},
+								"minecraft:destroy_time": 0,
+								"minecraft:loot": "loot_tables/test_loot_not_grown.json"
+							},
+							"permutations": [
+								{
+									"condition": "query.block_property('bridge:crop_growth') == 0",
+									"components": {
+										"minecraft:pick_collision": {
+											"origin": [
+												-5,
+												0,
+												-5
+											],
+											"size": [
+												10,
+												2,
+												10
+											]
+										},
+										"minecraft:material_instances": {
+											"*": {
+												"texture": "bridge_test_0",
+												"render_method": "alpha_test"
+											}
+										}
+									}
+								},
+								{
+									"condition": "query.block_property('bridge:crop_growth') == 1",
+									"components": {
+										"minecraft:material_instances": {
+											"*": {
+												"texture": "bridge_test_1",
+												"render_method": "alpha_test"
+											}
+										},
+										"minecraft:pick_collision": {
+											"origin": [
+												-5,
+												0,
+												-5
+											],
+											"size": [
+												10,
+												3,
+												10
+											]
+										}
+									}
+								},
+								{
+									"condition": "query.block_property('bridge:crop_growth') == 2",
+									"components": {
+										"minecraft:material_instances": {
+											"*": {
+												"texture": "bridge_test_2",
+												"render_method": "alpha_test"
+											}
+										},
+										"minecraft:pick_collision": {
+											"origin": [
+												-7,
+												0,
+												-7
+											],
+											"size": [
+												14,
+												6,
+												14
+											]
+										}
+									}
+								},
+								{
+									"condition": "query.block_property('bridge:crop_growth') == 3",
+									"components": {
+										"minecraft:material_instances": {
+											"*": {
+												"texture": "bridge_test_3",
+												"render_method": "alpha_test"
+											}
+										},
+										"minecraft:pick_collision": {
+											"origin": [
+												-7,
+												0,
+												-7
+											],
+											"size": [
+												14,
+												10,
+												14
+											]
+										}
+									}
+								},
+								{
+									"condition": "query.block_property('bridge:crop_growth') == 4",
+									"components": {
+										"minecraft:material_instances": {
+											"*": {
+												"texture": "bridge_test_4",
+												"render_method": "alpha_test"
+											}
+										},
+										"minecraft:on_interact": {
+											"target": "self",
+											"event": "bridge:harvest"
+										},
+										"minecraft:pick_collision": {
+											"origin": [
+												-7,
+												0,
+												-7
+											],
+											"size": [
+												14,
+												14,
+												14
+											]
+										}
+									}
+								}
+							],
+							"events": {
+								"bridge:grow": {
+									"randomize": [
+										{
+											"set_block_property": {
+												"bridge:crop_growth": "query.block_property('bridge:crop_growth') + 1"
+											},
+											"weight": 1
+										},
+										{
+											"weight": 1
+										}
+									]
+								},
+								"bridge:harvest": {
+									"set_block_property": {
+										"bridge:crop_growth": 2
+									},
+									"spawn_loot": {
+										"table": "loot_tables/test_loot_grown.json"
+									}
+								}
+							}
+						},
+						"key": "components",
+						"is_minified": true,
+						"children": {
+							"minecraft:ticking": {
+								"looping": true,
+								"range": [
+									25,
+									45
+								],
+								"on_tick": {
+									"target": "self",
+									"event": "bridge:grow",
+									"condition": "query.block_property('bridge:crop_growth') < 4"
+								}
+							},
+							"minecraft:geometry": "geometry.crop",
+							"minecraft:block_light_absorption": 0,
+							"minecraft:entity_collision": false,
+							"minecraft:breakonpush": true,
+							"minecraft:placement_filter": {
+								"conditions": [
+									{
+										"block_filter": [
+											"farmland"
+										],
+										"allowed_faces": [
+											"up"
+										]
+									}
+								]
+							},
+							"minecraft:destroy_time": 0,
+							"minecraft:loot": "loot_tables/test_loot_not_grown.json"
+						}
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "bridge:test",
+								"is_experimental": false,
+								"properties": {
+									"bridge:crop_growth": [
+										0,
+										1,
+										2,
+										3,
+										4
+									]
+								}
+							},
+							"components": {
+								"minecraft:ticking": {
+									"looping": true,
+									"range": [
+										25,
+										45
+									],
+									"on_tick": {
+										"target": "self",
+										"event": "bridge:grow",
+										"condition": "query.block_property('bridge:crop_growth') < 4"
+									}
+								},
+								"minecraft:geometry": "geometry.crop",
+								"minecraft:block_light_absorption": 0,
+								"minecraft:entity_collision": false,
+								"minecraft:breakonpush": true,
+								"minecraft:placement_filter": {
+									"conditions": [
+										{
+											"block_filter": [
+												"farmland"
+											],
+											"allowed_faces": [
+												"up"
+											]
+										}
+									]
+								},
+								"minecraft:destroy_time": 0,
+								"minecraft:loot": "loot_tables/test_loot_not_grown.json"
+							},
+							"permutations": [
+								{
+									"condition": "query.block_property('bridge:crop_growth') == 0",
+									"components": {
+										"minecraft:pick_collision": {
+											"origin": [
+												-5,
+												0,
+												-5
+											],
+											"size": [
+												10,
+												2,
+												10
+											]
+										},
+										"minecraft:material_instances": {
+											"*": {
+												"texture": "bridge_test_0",
+												"render_method": "alpha_test"
+											}
+										}
+									}
+								},
+								{
+									"condition": "query.block_property('bridge:crop_growth') == 1",
+									"components": {
+										"minecraft:material_instances": {
+											"*": {
+												"texture": "bridge_test_1",
+												"render_method": "alpha_test"
+											}
+										},
+										"minecraft:pick_collision": {
+											"origin": [
+												-5,
+												0,
+												-5
+											],
+											"size": [
+												10,
+												3,
+												10
+											]
+										}
+									}
+								},
+								{
+									"condition": "query.block_property('bridge:crop_growth') == 2",
+									"components": {
+										"minecraft:material_instances": {
+											"*": {
+												"texture": "bridge_test_2",
+												"render_method": "alpha_test"
+											}
+										},
+										"minecraft:pick_collision": {
+											"origin": [
+												-7,
+												0,
+												-7
+											],
+											"size": [
+												14,
+												6,
+												14
+											]
+										}
+									}
+								},
+								{
+									"condition": "query.block_property('bridge:crop_growth') == 3",
+									"components": {
+										"minecraft:material_instances": {
+											"*": {
+												"texture": "bridge_test_3",
+												"render_method": "alpha_test"
+											}
+										},
+										"minecraft:pick_collision": {
+											"origin": [
+												-7,
+												0,
+												-7
+											],
+											"size": [
+												14,
+												10,
+												14
+											]
+										}
+									}
+								},
+								{
+									"condition": "query.block_property('bridge:crop_growth') == 4",
+									"components": {
+										"minecraft:material_instances": {
+											"*": {
+												"texture": "bridge_test_4",
+												"render_method": "alpha_test"
+											}
+										},
+										"minecraft:on_interact": {
+											"target": "self",
+											"event": "bridge:harvest"
+										},
+										"minecraft:pick_collision": {
+											"origin": [
+												-7,
+												0,
+												-7
+											],
+											"size": [
+												14,
+												14,
+												14
+											]
+										}
+									}
+								}
+							],
+							"events": {
+								"bridge:grow": {
+									"randomize": [
+										{
+											"set_block_property": {
+												"bridge:crop_growth": "query.block_property('bridge:crop_growth') + 1"
+											},
+											"weight": 1
+										},
+										{
+											"weight": 1
+										}
+									]
+								},
+								"bridge:harvest": {
+									"set_block_property": {
+										"bridge:crop_growth": 2
+									},
+									"spawn_loot": {
+										"table": "loot_tables/test_loot_grown.json"
+									}
+								}
+							}
+						},
+						"key": "permutations",
+						"children": [
+							{
+								"open": [
+									{
+										"condition": "query.block_property('bridge:crop_growth') == 0",
+										"components": {
+											"minecraft:pick_collision": {
+												"origin": [
+													-5,
+													0,
+													-5
+												],
+												"size": [
+													10,
+													2,
+													10
+												]
+											},
+											"minecraft:material_instances": {
+												"*": {
+													"texture": "bridge_test_0",
+													"render_method": "alpha_test"
+												}
+											}
+										}
+									},
+									{
+										"condition": "query.block_property('bridge:crop_growth') == 1",
+										"components": {
+											"minecraft:material_instances": {
+												"*": {
+													"texture": "bridge_test_1",
+													"render_method": "alpha_test"
+												}
+											},
+											"minecraft:pick_collision": {
+												"origin": [
+													-5,
+													0,
+													-5
+												],
+												"size": [
+													10,
+													3,
+													10
+												]
+											}
+										}
+									},
+									{
+										"condition": "query.block_property('bridge:crop_growth') == 2",
+										"components": {
+											"minecraft:material_instances": {
+												"*": {
+													"texture": "bridge_test_2",
+													"render_method": "alpha_test"
+												}
+											},
+											"minecraft:pick_collision": {
+												"origin": [
+													-7,
+													0,
+													-7
+												],
+												"size": [
+													14,
+													6,
+													14
+												]
+											}
+										}
+									},
+									{
+										"condition": "query.block_property('bridge:crop_growth') == 3",
+										"components": {
+											"minecraft:material_instances": {
+												"*": {
+													"texture": "bridge_test_3",
+													"render_method": "alpha_test"
+												}
+											},
+											"minecraft:pick_collision": {
+												"origin": [
+													-7,
+													0,
+													-7
+												],
+												"size": [
+													14,
+													10,
+													14
+												]
+											}
+										}
+									},
+									{
+										"condition": "query.block_property('bridge:crop_growth') == 4",
+										"components": {
+											"minecraft:material_instances": {
+												"*": {
+													"texture": "bridge_test_4",
+													"render_method": "alpha_test"
+												}
+											},
+											"minecraft:on_interact": {
+												"target": "self",
+												"event": "bridge:harvest"
+											},
+											"minecraft:pick_collision": {
+												"origin": [
+													-7,
+													0,
+													-7
+												],
+												"size": [
+													14,
+													14,
+													14
+												]
+											}
+										}
+									}
+								],
+								"children": [
+									{
+										"data": "query.block_property('bridge:crop_growth') == 0",
+										"key": "condition"
+									},
+									{
+										"open": {
+											"condition": "query.block_property('bridge:crop_growth') == 0",
+											"components": {
+												"minecraft:pick_collision": {
+													"origin": [
+														-5,
+														0,
+														-5
+													],
+													"size": [
+														10,
+														2,
+														10
+													]
+												},
+												"minecraft:material_instances": {
+													"*": {
+														"texture": "bridge_test_0",
+														"render_method": "alpha_test"
+													}
+												}
+											}
+										},
+										"key": "components",
+										"children": [
+											{
+												"open": {
+													"minecraft:pick_collision": {
+														"origin": [
+															-5,
+															0,
+															-5
+														],
+														"size": [
+															10,
+															2,
+															10
+														]
+													},
+													"minecraft:material_instances": {
+														"*": {
+															"texture": "bridge_test_0",
+															"render_method": "alpha_test"
+														}
+													}
+												},
+												"key": "minecraft:pick_collision",
+												"is_minified": true,
+												"children": {
+													"origin": [
+														-5,
+														0,
+														-5
+													],
+													"size": [
+														10,
+														2,
+														10
+													]
+												}
+											},
+											{
+												"key": "minecraft:material_instances",
+												"is_minified": true,
+												"children": {
+													"*": {
+														"texture": "bridge_test_0",
+														"render_method": "alpha_test"
+													}
+												}
+											}
+										]
+									}
+								]
+							},
+							{
+								"open": [
+									{
+										"condition": "query.block_property('bridge:crop_growth') == 0",
+										"components": {
+											"minecraft:pick_collision": {
+												"origin": [
+													-5,
+													0,
+													-5
+												],
+												"size": [
+													10,
+													2,
+													10
+												]
+											},
+											"minecraft:material_instances": {
+												"*": {
+													"texture": "bridge_test_0",
+													"render_method": "alpha_test"
+												}
+											}
+										}
+									},
+									{
+										"condition": "query.block_property('bridge:crop_growth') == 1",
+										"components": {
+											"minecraft:material_instances": {
+												"*": {
+													"texture": "bridge_test_1",
+													"render_method": "alpha_test"
+												}
+											},
+											"minecraft:pick_collision": {
+												"origin": [
+													-5,
+													0,
+													-5
+												],
+												"size": [
+													10,
+													3,
+													10
+												]
+											}
+										}
+									},
+									{
+										"condition": "query.block_property('bridge:crop_growth') == 2",
+										"components": {
+											"minecraft:material_instances": {
+												"*": {
+													"texture": "bridge_test_2",
+													"render_method": "alpha_test"
+												}
+											},
+											"minecraft:pick_collision": {
+												"origin": [
+													-7,
+													0,
+													-7
+												],
+												"size": [
+													14,
+													6,
+													14
+												]
+											}
+										}
+									},
+									{
+										"condition": "query.block_property('bridge:crop_growth') == 3",
+										"components": {
+											"minecraft:material_instances": {
+												"*": {
+													"texture": "bridge_test_3",
+													"render_method": "alpha_test"
+												}
+											},
+											"minecraft:pick_collision": {
+												"origin": [
+													-7,
+													0,
+													-7
+												],
+												"size": [
+													14,
+													10,
+													14
+												]
+											}
+										}
+									},
+									{
+										"condition": "query.block_property('bridge:crop_growth') == 4",
+										"components": {
+											"minecraft:material_instances": {
+												"*": {
+													"texture": "bridge_test_4",
+													"render_method": "alpha_test"
+												}
+											},
+											"minecraft:on_interact": {
+												"target": "self",
+												"event": "bridge:harvest"
+											},
+											"minecraft:pick_collision": {
+												"origin": [
+													-7,
+													0,
+													-7
+												],
+												"size": [
+													14,
+													14,
+													14
+												]
+											}
+										}
+									}
+								],
+								"children": [
+									{
+										"data": "query.block_property('bridge:crop_growth') == 1",
+										"key": "condition"
+									},
+									{
+										"open": {
+											"condition": "query.block_property('bridge:crop_growth') == 1",
+											"components": {
+												"minecraft:material_instances": {
+													"*": {
+														"texture": "bridge_test_1",
+														"render_method": "alpha_test"
+													}
+												},
+												"minecraft:pick_collision": {
+													"origin": [
+														-5,
+														0,
+														-5
+													],
+													"size": [
+														10,
+														3,
+														10
+													]
+												}
+											}
+										},
+										"key": "components",
+										"children": [
+											{
+												"open": {
+													"minecraft:material_instances": {
+														"*": {
+															"texture": "bridge_test_1",
+															"render_method": "alpha_test"
+														}
+													},
+													"minecraft:pick_collision": {
+														"origin": [
+															-5,
+															0,
+															-5
+														],
+														"size": [
+															10,
+															3,
+															10
+														]
+													}
+												},
+												"key": "minecraft:material_instances",
+												"children": [
+													{
+														"open": {
+															"*": {
+																"texture": "bridge_test_1",
+																"render_method": "alpha_test"
+															}
+														},
+														"key": "*",
+														"is_minified": true,
+														"children": {
+															"texture": "bridge_test_1",
+															"render_method": "alpha_test"
+														}
+													}
+												]
+											},
+											{
+												"key": "minecraft:pick_collision",
+												"is_minified": true,
+												"children": {
+													"origin": [
+														-5,
+														0,
+														-5
+													],
+													"size": [
+														10,
+														3,
+														10
+													]
+												}
+											}
+										]
+									}
+								]
+							},
+							{
+								"is_minified": true,
+								"children": {
+									"condition": "query.block_property('bridge:crop_growth') == 2",
+									"components": {
+										"minecraft:material_instances": {
+											"*": {
+												"texture": "bridge_test_2",
+												"render_method": "alpha_test"
+											}
+										},
+										"minecraft:pick_collision": {
+											"origin": [
+												-7,
+												0,
+												-7
+											],
+											"size": [
+												14,
+												6,
+												14
+											]
+										}
+									}
+								}
+							},
+							{
+								"is_minified": true,
+								"children": {
+									"condition": "query.block_property('bridge:crop_growth') == 3",
+									"components": {
+										"minecraft:material_instances": {
+											"*": {
+												"texture": "bridge_test_3",
+												"render_method": "alpha_test"
+											}
+										},
+										"minecraft:pick_collision": {
+											"origin": [
+												-7,
+												0,
+												-7
+											],
+											"size": [
+												14,
+												10,
+												14
+											]
+										}
+									}
+								}
+							},
+							{
+								"is_minified": true,
+								"children": {
+									"condition": "query.block_property('bridge:crop_growth') == 4",
+									"components": {
+										"minecraft:material_instances": {
+											"*": {
+												"texture": "bridge_test_4",
+												"render_method": "alpha_test"
+											}
+										},
+										"minecraft:on_interact": {
+											"target": "self",
+											"event": "bridge:harvest"
+										},
+										"minecraft:pick_collision": {
+											"origin": [
+												-7,
+												0,
+												-7
+											],
+											"size": [
+												14,
+												14,
+												14
+											]
+										}
+									}
+								}
+							}
+						]
+					},
+					{
+						"key": "events",
+						"is_minified": true,
+						"children": {
+							"bridge:grow": {
+								"randomize": [
+									{
+										"set_block_property": {
+											"bridge:crop_growth": "query.block_property('bridge:crop_growth') + 1"
+										},
+										"weight": 1
+									},
+									{
+										"weight": 1
+									}
+								]
+							},
+							"bridge:harvest": {
+								"set_block_property": {
+									"bridge:crop_growth": 2
+								},
+								"spawn_loot": {
+									"table": "loot_tables/test_loot_grown.json"
+								}
+							}
+						}
+					}
+				]
+			}
+		]
+	}
+}

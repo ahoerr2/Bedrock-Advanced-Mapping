@@ -1,0 +1,24 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"category": "nature",
+			"identifier": "bridge:test_seeds"
+		},
+		"components": {
+			"minecraft:creative_category": {
+				"parent": "itemGroup.name.seed"
+			},
+			"minecraft:max_stack_size": 64,
+			"minecraft:fuel": {
+				"duration": 5
+			},
+			"minecraft:block_placer": {
+				"block": "bridge:test"
+			},
+			"minecraft:icon": {
+				"texture": "bridge_test_seeds"
+			}
+		}
+	}
+}

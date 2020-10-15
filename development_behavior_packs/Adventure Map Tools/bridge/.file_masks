@@ -1,0 +1,37 @@
+{
+	"BP/entities/player.json": {
+		"data": {}
+	},
+	"BP/animation_controllers/bridge/custom_item_behavior.json": {
+		"data": {
+			"f9412fe1_1622_45f4_a512_f6d24c014125": {
+				"format_version": "1.10.0",
+				"animation_controllers": {
+					"controller.animation.bridge_custom_item_behavior": {
+						"states": {
+							"default": {}
+						}
+					}
+				}
+			}
+		}
+	},
+	"BP/blocks/pedestal_block.json": {
+		"data": {}
+	},
+	"BP/loot_tables/test_loot_grown.json": {
+		"data": {}
+	},
+	"BP/blocks/test.json": {
+		"data": {}
+	},
+	"BP/loot_tables/test_loot_not_grown.json": {
+		"data": {}
+	},
+	"BP/items/test_seeds.json": {
+		"data": {}
+	},
+	"RP/ Pack/models/entity/pedestal_block.geo.json": {
+		"data": {}
+	}
+}

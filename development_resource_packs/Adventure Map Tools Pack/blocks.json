@@ -1,0 +1,11 @@
+{
+	"format_version": [
+		1,
+		1,
+		0
+	],
+	"bridge:pedestal_block": {
+		"textures": "bridge_pedestal_block",
+		"sound": "stone"
+	}
+}

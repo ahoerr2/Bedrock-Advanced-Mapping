@@ -1,0 +1,7 @@
+##bridge-file-version: #3
+pack.name=Adventure Map Tools
+pack.description=Maps tools for making adventure maps
+
+
+tile.bridge:pedestal_block.name.name = Pedestal
+tile.bridge:pedestal_block.name = Pedestal

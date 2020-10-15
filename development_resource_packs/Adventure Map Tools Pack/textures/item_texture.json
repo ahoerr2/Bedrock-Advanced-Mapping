@@ -1,0 +1,12 @@
+{
+	"resource_pack_name": "bridgeRP",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"bridge_pedestal_block": {
+			"textures": "textures/items/pedestal_block"
+		},
+		"bridge_test_seeds": {
+			"textures": "textures/items/test_seeds"
+		}
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"resource_pack_name": "bridgeRP",
+	"texture_name": "atlas.terrain",
+	"padding": 8,
+	"num_mip_levels": 4,
+	"texture_data": {
+		"bridge_pedestal_block": {
+			"textures": "textures/blocks/pedestal_block"
+		},
+		"bridge_test_0": {
+			"textures": "textures/blocks/test_0"
+		},
+		"bridge_test_1": {
+			"textures": "textures/blocks/test_1"
+		},
+		"bridge_test_2": {
+			"textures": "textures/blocks/test_2"
+		},
+		"bridge_test_3": {
+			"textures": "textures/blocks/test_3"
+		},
+		"bridge_test_4": {
+			"textures": "textures/blocks/test_4"
+		}
+	}
+}

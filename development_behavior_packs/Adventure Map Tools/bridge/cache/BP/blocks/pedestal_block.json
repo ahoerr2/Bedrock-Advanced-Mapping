@@ -1,0 +1,1722 @@
+{
+	"file_path": "C:\\Users\\ahoer\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs\\Adventure Map Tools\\blocks\\pedestal_block.json",
+	"file_type": "block",
+	"format_version": 1,
+	"file_uuid": "8338bda3_972d_4750_8be7_4cc638c6156c",
+	"file_version": 27,
+	"cache_content": {
+		"children": [
+			{
+				"open": {
+					"format_version": "1.16.100",
+					"minecraft:block": {
+						"description": {
+							"identifier": "bridge:pedestal_block",
+							"is_experimental": true,
+							"properties": {
+								"bridge:pedestal_activated": [
+									false,
+									true
+								]
+							}
+						},
+						"components": {
+							"minecraft:destroy_time": 99999999,
+							"minecraft:explosion_resistance": 99999999999,
+							"minecraft:map_color": "#534C4C",
+							"minecraft:immovable": true,
+							"minecraft:display_name": "Pedestal_Block",
+							"minecraft:on_interact": {
+								"event": "bridge:place_item",
+								"condition": "query.get_equipped_item_name == 'shears'",
+								"target": "other"
+							},
+							"minecraft:block_light_emission": 0.9,
+							"minecraft:placement_filter": {
+								"conditions": [
+									{
+										"allowed_faces": [
+											"up"
+										]
+									}
+								]
+							},
+							"minecraft:geometry": "geometry.advtoolspedblock",
+							"minecraft:material_instances": {
+								"*": {
+									"texture": "bridge_pedestal_block",
+									"render_method": "alpha_test"
+								}
+							},
+							"minecraft:pick_collision": {
+								"origin": [
+									-8,
+									0,
+									-8
+								],
+								"size": [
+									16,
+									9,
+									16
+								]
+							},
+							"minecraft:entity_collision": {
+								"origin": [
+									-8,
+									0,
+									-8
+								],
+								"size": [
+									16,
+									9,
+									16
+								]
+							},
+							"minecraft:unwalkable": true
+						},
+						"events": {
+							"bridge:place_item": {
+								"run_command": {
+									"command": [
+										"say Redstone block set",
+										"setblock ~ ~-1 ~ redstone_block"
+									],
+									"target": "self"
+								},
+								"set_block_property": {
+									"bridge:pedestal_activated": true
+								},
+								"play_sound": {
+									"sound": "block.end_portal.spawn",
+									"target": "self"
+								}
+							},
+							"bridge:deactivate_portal": {
+								"set_block_property": {
+									"bridge:pedestal_activated": false
+								},
+								"run_command": {
+									"command": [
+										"say Pedestal reset",
+										"setblock ~ ~-1 ~ air"
+									],
+									"target": "self"
+								}
+							}
+						},
+						"permutations": [
+							{
+								"condition": "query.block_property('bridge:pedestal_activated') == true",
+								"components": {
+									"minecraft:geometry": "geometry.advtoolspedblockactivated",
+									"minecraft:entity_collision": {
+										"origin": [
+											-8,
+											0,
+											-8
+										],
+										"size": [
+											15,
+											16,
+											16
+										]
+									},
+									"minecraft:on_interact": {
+										"event": "bridge:deactivate_portal",
+										"condition": "query.get_equipped_item_name == 'shears'",
+										"target": "other"
+									},
+									"minecraft:pick_collision": {
+										"origin": [
+											-8,
+											0,
+											-8
+										],
+										"size": [
+											15,
+											16,
+											16
+										]
+									}
+								}
+							}
+						]
+					}
+				},
+				"data": "1.16.100",
+				"key": "format_version"
+			},
+			{
+				"open": {
+					"format_version": "1.16.100",
+					"minecraft:block": {
+						"description": {
+							"identifier": "bridge:pedestal_block",
+							"is_experimental": true,
+							"properties": {
+								"bridge:pedestal_activated": [
+									false,
+									true
+								]
+							}
+						},
+						"components": {
+							"minecraft:destroy_time": 99999999,
+							"minecraft:explosion_resistance": 99999999999,
+							"minecraft:map_color": "#534C4C",
+							"minecraft:immovable": true,
+							"minecraft:display_name": "Pedestal_Block",
+							"minecraft:on_interact": {
+								"event": "bridge:place_item",
+								"condition": "query.get_equipped_item_name == 'shears'",
+								"target": "other"
+							},
+							"minecraft:block_light_emission": 0.9,
+							"minecraft:placement_filter": {
+								"conditions": [
+									{
+										"allowed_faces": [
+											"up"
+										]
+									}
+								]
+							},
+							"minecraft:geometry": "geometry.advtoolspedblock",
+							"minecraft:material_instances": {
+								"*": {
+									"texture": "bridge_pedestal_block",
+									"render_method": "alpha_test"
+								}
+							},
+							"minecraft:pick_collision": {
+								"origin": [
+									-8,
+									0,
+									-8
+								],
+								"size": [
+									16,
+									9,
+									16
+								]
+							},
+							"minecraft:entity_collision": {
+								"origin": [
+									-8,
+									0,
+									-8
+								],
+								"size": [
+									16,
+									9,
+									16
+								]
+							},
+							"minecraft:unwalkable": true
+						},
+						"events": {
+							"bridge:place_item": {
+								"run_command": {
+									"command": [
+										"say Redstone block set",
+										"setblock ~ ~-1 ~ redstone_block"
+									],
+									"target": "self"
+								},
+								"set_block_property": {
+									"bridge:pedestal_activated": true
+								},
+								"play_sound": {
+									"sound": "block.end_portal.spawn",
+									"target": "self"
+								}
+							},
+							"bridge:deactivate_portal": {
+								"set_block_property": {
+									"bridge:pedestal_activated": false
+								},
+								"run_command": {
+									"command": [
+										"say Pedestal reset",
+										"setblock ~ ~-1 ~ air"
+									],
+									"target": "self"
+								}
+							}
+						},
+						"permutations": [
+							{
+								"condition": "query.block_property('bridge:pedestal_activated') == true",
+								"components": {
+									"minecraft:geometry": "geometry.advtoolspedblockactivated",
+									"minecraft:entity_collision": {
+										"origin": [
+											-8,
+											0,
+											-8
+										],
+										"size": [
+											15,
+											16,
+											16
+										]
+									},
+									"minecraft:on_interact": {
+										"event": "bridge:deactivate_portal",
+										"condition": "query.get_equipped_item_name == 'shears'",
+										"target": "other"
+									},
+									"minecraft:pick_collision": {
+										"origin": [
+											-8,
+											0,
+											-8
+										],
+										"size": [
+											15,
+											16,
+											16
+										]
+									}
+								}
+							}
+						]
+					}
+				},
+				"key": "minecraft:block",
+				"children": [
+					{
+						"open": {
+							"description": {
+								"identifier": "bridge:pedestal_block",
+								"is_experimental": true,
+								"properties": {
+									"bridge:pedestal_activated": [
+										false,
+										true
+									]
+								}
+							},
+							"components": {
+								"minecraft:destroy_time": 99999999,
+								"minecraft:explosion_resistance": 99999999999,
+								"minecraft:map_color": "#534C4C",
+								"minecraft:immovable": true,
+								"minecraft:display_name": "Pedestal_Block",
+								"minecraft:on_interact": {
+									"event": "bridge:place_item",
+									"condition": "query.get_equipped_item_name == 'shears'",
+									"target": "other"
+								},
+								"minecraft:block_light_emission": 0.9,
+								"minecraft:placement_filter": {
+									"conditions": [
+										{
+											"allowed_faces": [
+												"up"
+											]
+										}
+									]
+								},
+								"minecraft:geometry": "geometry.advtoolspedblock",
+								"minecraft:material_instances": {
+									"*": {
+										"texture": "bridge_pedestal_block",
+										"render_method": "alpha_test"
+									}
+								},
+								"minecraft:pick_collision": {
+									"origin": [
+										-8,
+										0,
+										-8
+									],
+									"size": [
+										16,
+										9,
+										16
+									]
+								},
+								"minecraft:entity_collision": {
+									"origin": [
+										-8,
+										0,
+										-8
+									],
+									"size": [
+										16,
+										9,
+										16
+									]
+								},
+								"minecraft:unwalkable": true
+							},
+							"events": {
+								"bridge:place_item": {
+									"run_command": {
+										"command": [
+											"say Redstone block set",
+											"setblock ~ ~-1 ~ redstone_block"
+										],
+										"target": "self"
+									},
+									"set_block_property": {
+										"bridge:pedestal_activated": true
+									},
+									"play_sound": {
+										"sound": "block.end_portal.spawn",
+										"target": "self"
+									}
+								},
+								"bridge:deactivate_portal": {
+									"set_block_property": {
+										"bridge:pedestal_activated": false
+									},
+									"run_command": {
+										"command": [
+											"say Pedestal reset",
+											"setblock ~ ~-1 ~ air"
+										],
+										"target": "self"
+									}
+								}
+							},
+							"permutations": [
+								{
+									"condition": "query.block_property('bridge:pedestal_activated') == true",
+									"components": {
+										"minecraft:geometry": "geometry.advtoolspedblockactivated",
+										"minecraft:entity_collision": {
+											"origin": [
+												-8,
+												0,
+												-8
+											],
+											"size": [
+												15,
+												16,
+												16
+											]
+										},
+										"minecraft:on_interact": {
+											"event": "bridge:deactivate_portal",
+											"condition": "query.get_equipped_item_name == 'shears'",
+											"target": "other"
+										},
+										"minecraft:pick_collision": {
+											"origin": [
+												-8,
+												0,
+												-8
+											],
+											"size": [
+												15,
+												16,
+												16
+											]
+										}
+									}
+								}
+							]
+						},
+						"key": "description",
+						"children": [
+							{
+								"data": "bridge:pedestal_block",
+								"key": "identifier"
+							},
+							{
+								"data": "true",
+								"key": "is_experimental"
+							},
+							{
+								"open": {
+									"identifier": "bridge:pedestal_block",
+									"is_experimental": true,
+									"properties": {
+										"bridge:pedestal_activated": [
+											false,
+											true
+										]
+									}
+								},
+								"key": "properties",
+								"children": [
+									{
+										"open": {
+											"bridge:pedestal_activated": [
+												false,
+												true
+											]
+										},
+										"key": "bridge:pedestal_activated",
+										"is_minified": true,
+										"children": [
+											false,
+											true
+										]
+									}
+								]
+							}
+						]
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "bridge:pedestal_block",
+								"is_experimental": true,
+								"properties": {
+									"bridge:pedestal_activated": [
+										false,
+										true
+									]
+								}
+							},
+							"components": {
+								"minecraft:destroy_time": 99999999,
+								"minecraft:explosion_resistance": 99999999999,
+								"minecraft:map_color": "#534C4C",
+								"minecraft:immovable": true,
+								"minecraft:display_name": "Pedestal_Block",
+								"minecraft:on_interact": {
+									"event": "bridge:place_item",
+									"condition": "query.get_equipped_item_name == 'shears'",
+									"target": "other"
+								},
+								"minecraft:block_light_emission": 0.9,
+								"minecraft:placement_filter": {
+									"conditions": [
+										{
+											"allowed_faces": [
+												"up"
+											]
+										}
+									]
+								},
+								"minecraft:geometry": "geometry.advtoolspedblock",
+								"minecraft:material_instances": {
+									"*": {
+										"texture": "bridge_pedestal_block",
+										"render_method": "alpha_test"
+									}
+								},
+								"minecraft:pick_collision": {
+									"origin": [
+										-8,
+										0,
+										-8
+									],
+									"size": [
+										16,
+										9,
+										16
+									]
+								},
+								"minecraft:entity_collision": {
+									"origin": [
+										-8,
+										0,
+										-8
+									],
+									"size": [
+										16,
+										9,
+										16
+									]
+								},
+								"minecraft:unwalkable": true
+							},
+							"events": {
+								"bridge:place_item": {
+									"run_command": {
+										"command": [
+											"say Redstone block set",
+											"setblock ~ ~-1 ~ redstone_block"
+										],
+										"target": "self"
+									},
+									"set_block_property": {
+										"bridge:pedestal_activated": true
+									},
+									"play_sound": {
+										"sound": "block.end_portal.spawn",
+										"target": "self"
+									}
+								},
+								"bridge:deactivate_portal": {
+									"set_block_property": {
+										"bridge:pedestal_activated": false
+									},
+									"run_command": {
+										"command": [
+											"say Pedestal reset",
+											"setblock ~ ~-1 ~ air"
+										],
+										"target": "self"
+									}
+								}
+							},
+							"permutations": [
+								{
+									"condition": "query.block_property('bridge:pedestal_activated') == true",
+									"components": {
+										"minecraft:geometry": "geometry.advtoolspedblockactivated",
+										"minecraft:entity_collision": {
+											"origin": [
+												-8,
+												0,
+												-8
+											],
+											"size": [
+												15,
+												16,
+												16
+											]
+										},
+										"minecraft:on_interact": {
+											"event": "bridge:deactivate_portal",
+											"condition": "query.get_equipped_item_name == 'shears'",
+											"target": "other"
+										},
+										"minecraft:pick_collision": {
+											"origin": [
+												-8,
+												0,
+												-8
+											],
+											"size": [
+												15,
+												16,
+												16
+											]
+										}
+									}
+								}
+							]
+						},
+						"key": "components",
+						"children": [
+							{
+								"data": "99999999",
+								"key": "minecraft:destroy_time"
+							},
+							{
+								"data": "99999999999",
+								"key": "minecraft:explosion_resistance"
+							},
+							{
+								"open": {
+									"minecraft:destroy_time": 99999999,
+									"minecraft:explosion_resistance": 99999999999,
+									"minecraft:map_color": "#534C4C",
+									"minecraft:immovable": true,
+									"minecraft:display_name": "Pedestal_Block",
+									"minecraft:on_interact": {
+										"event": "bridge:place_item",
+										"condition": "query.get_equipped_item_name == 'shears'",
+										"target": "other"
+									},
+									"minecraft:block_light_emission": 0.9,
+									"minecraft:placement_filter": {
+										"conditions": [
+											{
+												"allowed_faces": [
+													"up"
+												]
+											}
+										]
+									},
+									"minecraft:geometry": "geometry.advtoolspedblock",
+									"minecraft:material_instances": {
+										"*": {
+											"texture": "bridge_pedestal_block",
+											"render_method": "alpha_test"
+										}
+									},
+									"minecraft:pick_collision": {
+										"origin": [
+											-8,
+											0,
+											-8
+										],
+										"size": [
+											16,
+											9,
+											16
+										]
+									},
+									"minecraft:entity_collision": {
+										"origin": [
+											-8,
+											0,
+											-8
+										],
+										"size": [
+											16,
+											9,
+											16
+										]
+									},
+									"minecraft:unwalkable": true
+								},
+								"data": "#534C4C",
+								"key": "minecraft:map_color"
+							},
+							{
+								"data": "true",
+								"key": "minecraft:immovable"
+							},
+							{
+								"open": {
+									"minecraft:destroy_time": 99999999,
+									"minecraft:explosion_resistance": 99999999999,
+									"minecraft:map_color": "#534C4C",
+									"minecraft:immovable": true,
+									"minecraft:display_name": "Pedestal_Block",
+									"minecraft:on_interact": {
+										"event": "bridge:place_item",
+										"condition": "query.get_equipped_item_name == 'shears'",
+										"target": "other"
+									},
+									"minecraft:block_light_emission": 0.9,
+									"minecraft:placement_filter": {
+										"conditions": [
+											{
+												"allowed_faces": [
+													"up"
+												]
+											}
+										]
+									},
+									"minecraft:geometry": "geometry.advtoolspedblock",
+									"minecraft:material_instances": {
+										"*": {
+											"texture": "bridge_pedestal_block",
+											"render_method": "alpha_test"
+										}
+									},
+									"minecraft:pick_collision": {
+										"origin": [
+											-8,
+											0,
+											-8
+										],
+										"size": [
+											16,
+											9,
+											16
+										]
+									},
+									"minecraft:entity_collision": {
+										"origin": [
+											-8,
+											0,
+											-8
+										],
+										"size": [
+											16,
+											9,
+											16
+										]
+									},
+									"minecraft:unwalkable": true
+								},
+								"data": "Pedestal_Block",
+								"key": "minecraft:display_name"
+							},
+							{
+								"open": {
+									"minecraft:destroy_time": 99999999,
+									"minecraft:explosion_resistance": 99999999999,
+									"minecraft:map_color": "#534C4C",
+									"minecraft:immovable": true,
+									"minecraft:display_name": "Pedestal_Block",
+									"minecraft:on_interact": {
+										"event": "bridge:place_item",
+										"condition": "query.get_equipped_item_name == 'shears'",
+										"target": "other"
+									},
+									"minecraft:block_light_emission": 0.9,
+									"minecraft:placement_filter": {
+										"conditions": [
+											{
+												"allowed_faces": [
+													"up"
+												]
+											}
+										]
+									},
+									"minecraft:geometry": "geometry.advtoolspedblock",
+									"minecraft:material_instances": {
+										"*": {
+											"texture": "bridge_pedestal_block",
+											"render_method": "alpha_test"
+										}
+									},
+									"minecraft:pick_collision": {
+										"origin": [
+											-8,
+											0,
+											-8
+										],
+										"size": [
+											16,
+											9,
+											16
+										]
+									},
+									"minecraft:entity_collision": {
+										"origin": [
+											-8,
+											0,
+											-8
+										],
+										"size": [
+											16,
+											9,
+											16
+										]
+									},
+									"minecraft:unwalkable": true
+								},
+								"key": "minecraft:on_interact",
+								"is_minified": true,
+								"children": {
+									"event": "bridge:place_item",
+									"condition": "query.get_equipped_item_name == 'shears'",
+									"target": "other"
+								}
+							},
+							{
+								"data": "0.9",
+								"key": "minecraft:block_light_emission"
+							},
+							{
+								"key": "minecraft:placement_filter",
+								"children": [
+									{
+										"open": {
+											"conditions": [
+												{
+													"allowed_faces": [
+														"up"
+													]
+												}
+											]
+										},
+										"key": "conditions",
+										"children": [
+											{
+												"open": [
+													{
+														"allowed_faces": [
+															"up"
+														]
+													}
+												],
+												"children": [
+													{
+														"open": {
+															"allowed_faces": [
+																"up"
+															]
+														},
+														"key": "allowed_faces",
+														"is_minified": true,
+														"children": [
+															"up"
+														]
+													}
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"open": {
+									"minecraft:destroy_time": 99999999,
+									"minecraft:explosion_resistance": 99999999999,
+									"minecraft:map_color": "#534C4C",
+									"minecraft:immovable": true,
+									"minecraft:display_name": "Pedestal_Block",
+									"minecraft:on_interact": {
+										"event": "bridge:place_item",
+										"condition": "query.get_equipped_item_name == 'shears'",
+										"target": "other"
+									},
+									"minecraft:block_light_emission": 0.9,
+									"minecraft:placement_filter": {
+										"conditions": [
+											{
+												"allowed_faces": [
+													"up"
+												]
+											}
+										]
+									},
+									"minecraft:geometry": "geometry.advtoolspedblock",
+									"minecraft:material_instances": {
+										"*": {
+											"texture": "bridge_pedestal_block",
+											"render_method": "alpha_test"
+										}
+									},
+									"minecraft:pick_collision": {
+										"origin": [
+											-8,
+											0,
+											-8
+										],
+										"size": [
+											16,
+											9,
+											16
+										]
+									},
+									"minecraft:entity_collision": {
+										"origin": [
+											-8,
+											0,
+											-8
+										],
+										"size": [
+											16,
+											9,
+											16
+										]
+									},
+									"minecraft:unwalkable": true
+								},
+								"data": "geometry.advtoolspedblock",
+								"key": "minecraft:geometry"
+							},
+							{
+								"key": "minecraft:material_instances",
+								"is_minified": true,
+								"children": {
+									"*": {
+										"texture": "bridge_pedestal_block",
+										"render_method": "alpha_test"
+									}
+								}
+							},
+							{
+								"key": "minecraft:pick_collision",
+								"children": [
+									{
+										"open": {
+											"origin": [
+												-8,
+												0,
+												-8
+											],
+											"size": [
+												16,
+												9,
+												16
+											]
+										},
+										"key": "origin",
+										"is_minified": true,
+										"children": [
+											-8,
+											0,
+											-8
+										]
+									},
+									{
+										"open": {
+											"origin": [
+												-8,
+												0,
+												-8
+											],
+											"size": [
+												16,
+												9,
+												16
+											]
+										},
+										"key": "size",
+										"is_minified": true,
+										"children": [
+											16,
+											9,
+											16
+										]
+									}
+								]
+							},
+							{
+								"open": {
+									"minecraft:destroy_time": 99999999,
+									"minecraft:explosion_resistance": 99999999999,
+									"minecraft:map_color": "#534C4C",
+									"minecraft:immovable": true,
+									"minecraft:display_name": "Pedestal_Block",
+									"minecraft:on_interact": {
+										"event": "bridge:place_item",
+										"condition": "query.get_equipped_item_name == 'shears'",
+										"target": "other"
+									},
+									"minecraft:block_light_emission": 0.9,
+									"minecraft:placement_filter": {
+										"conditions": [
+											{
+												"allowed_faces": [
+													"up"
+												]
+											}
+										]
+									},
+									"minecraft:geometry": "geometry.advtoolspedblock",
+									"minecraft:material_instances": {
+										"*": {
+											"texture": "bridge_pedestal_block",
+											"render_method": "alpha_test"
+										}
+									},
+									"minecraft:pick_collision": {
+										"origin": [
+											-8,
+											0,
+											-8
+										],
+										"size": [
+											16,
+											9,
+											16
+										]
+									},
+									"minecraft:entity_collision": {
+										"origin": [
+											-8,
+											0,
+											-8
+										],
+										"size": [
+											16,
+											9,
+											16
+										]
+									},
+									"minecraft:unwalkable": true
+								},
+								"key": "minecraft:entity_collision",
+								"children": [
+									{
+										"open": {
+											"origin": [
+												-8,
+												0,
+												-8
+											],
+											"size": [
+												16,
+												9,
+												16
+											]
+										},
+										"key": "origin",
+										"is_minified": true,
+										"children": [
+											-8,
+											0,
+											-8
+										]
+									},
+									{
+										"open": {
+											"origin": [
+												-8,
+												0,
+												-8
+											],
+											"size": [
+												16,
+												9,
+												16
+											]
+										},
+										"key": "size",
+										"is_minified": true,
+										"children": [
+											16,
+											9,
+											16
+										]
+									}
+								]
+							},
+							{
+								"data": "true",
+								"key": "minecraft:unwalkable"
+							}
+						]
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "bridge:pedestal_block",
+								"is_experimental": true,
+								"properties": {
+									"bridge:pedestal_activated": [
+										false,
+										true
+									]
+								}
+							},
+							"components": {
+								"minecraft:destroy_time": 99999999,
+								"minecraft:explosion_resistance": 99999999999,
+								"minecraft:map_color": "#534C4C",
+								"minecraft:immovable": true,
+								"minecraft:display_name": "Pedestal_Block",
+								"minecraft:on_interact": {
+									"event": "bridge:place_item",
+									"condition": "query.get_equipped_item_name == 'shears'",
+									"target": "other"
+								},
+								"minecraft:block_light_emission": 0.9,
+								"minecraft:placement_filter": {
+									"conditions": [
+										{
+											"allowed_faces": [
+												"up"
+											]
+										}
+									]
+								},
+								"minecraft:geometry": "geometry.advtoolspedblock",
+								"minecraft:material_instances": {
+									"*": {
+										"texture": "bridge_pedestal_block",
+										"render_method": "alpha_test"
+									}
+								},
+								"minecraft:pick_collision": {
+									"origin": [
+										-8,
+										0,
+										-8
+									],
+									"size": [
+										16,
+										9,
+										16
+									]
+								},
+								"minecraft:entity_collision": {
+									"origin": [
+										-8,
+										0,
+										-8
+									],
+									"size": [
+										16,
+										9,
+										16
+									]
+								},
+								"minecraft:unwalkable": true
+							},
+							"events": {
+								"bridge:place_item": {
+									"run_command": {
+										"command": [
+											"say Redstone block set",
+											"setblock ~ ~-1 ~ redstone_block"
+										],
+										"target": "self"
+									},
+									"set_block_property": {
+										"bridge:pedestal_activated": true
+									},
+									"play_sound": {
+										"sound": "block.end_portal.spawn",
+										"target": "self"
+									}
+								},
+								"bridge:deactivate_portal": {
+									"set_block_property": {
+										"bridge:pedestal_activated": false
+									},
+									"run_command": {
+										"command": [
+											"say Pedestal reset",
+											"setblock ~ ~-1 ~ air"
+										],
+										"target": "self"
+									}
+								}
+							},
+							"permutations": [
+								{
+									"condition": "query.block_property('bridge:pedestal_activated') == true",
+									"components": {
+										"minecraft:geometry": "geometry.advtoolspedblockactivated",
+										"minecraft:entity_collision": {
+											"origin": [
+												-8,
+												0,
+												-8
+											],
+											"size": [
+												15,
+												16,
+												16
+											]
+										},
+										"minecraft:on_interact": {
+											"event": "bridge:deactivate_portal",
+											"condition": "query.get_equipped_item_name == 'shears'",
+											"target": "other"
+										},
+										"minecraft:pick_collision": {
+											"origin": [
+												-8,
+												0,
+												-8
+											],
+											"size": [
+												15,
+												16,
+												16
+											]
+										}
+									}
+								}
+							]
+						},
+						"key": "events",
+						"children": [
+							{
+								"open": {
+									"bridge:place_item": {
+										"run_command": {
+											"command": [
+												"say Redstone block set",
+												"setblock ~ ~-1 ~ redstone_block"
+											],
+											"target": "self"
+										},
+										"set_block_property": {
+											"bridge:pedestal_activated": true
+										},
+										"play_sound": {
+											"sound": "block.end_portal.spawn",
+											"target": "self"
+										}
+									},
+									"bridge:deactivate_portal": {
+										"set_block_property": {
+											"bridge:pedestal_activated": false
+										},
+										"run_command": {
+											"command": [
+												"say Pedestal reset",
+												"setblock ~ ~-1 ~ air"
+											],
+											"target": "self"
+										}
+									}
+								},
+								"key": "bridge:place_item",
+								"children": [
+									{
+										"open": {
+											"run_command": {
+												"command": [
+													"say Redstone block set",
+													"setblock ~ ~-1 ~ redstone_block"
+												],
+												"target": "self"
+											},
+											"set_block_property": {
+												"bridge:pedestal_activated": true
+											},
+											"play_sound": {
+												"sound": "block.end_portal.spawn",
+												"target": "self"
+											}
+										},
+										"key": "run_command",
+										"children": [
+											{
+												"open": {
+													"command": [
+														"say Redstone block set",
+														"setblock ~ ~-1 ~ redstone_block"
+													],
+													"target": "self"
+												},
+												"key": "command",
+												"is_minified": true,
+												"children": [
+													"say Redstone block set",
+													"setblock ~ ~-1 ~ redstone_block"
+												]
+											},
+											{
+												"data": "self",
+												"key": "target"
+											}
+										]
+									},
+									{
+										"open": {
+											"run_command": {
+												"command": [
+													"say Redstone block set",
+													"setblock ~ ~-1 ~ redstone_block"
+												],
+												"target": "self"
+											},
+											"set_block_property": {
+												"bridge:pedestal_activated": true
+											},
+											"play_sound": {
+												"sound": "block.end_portal.spawn",
+												"target": "self"
+											}
+										},
+										"key": "set_block_property",
+										"is_minified": true,
+										"children": {
+											"bridge:pedestal_activated": true
+										}
+									},
+									{
+										"open": {
+											"run_command": {
+												"command": [
+													"say Redstone block set",
+													"setblock ~ ~-1 ~ redstone_block"
+												],
+												"target": "self"
+											},
+											"set_block_property": {
+												"bridge:pedestal_activated": true
+											},
+											"play_sound": {
+												"sound": "block.end_portal.spawn",
+												"target": "self"
+											}
+										},
+										"key": "play_sound",
+										"is_minified": true,
+										"children": {
+											"sound": "block.end_portal.spawn",
+											"target": "self"
+										}
+									}
+								]
+							},
+							{
+								"open": {
+									"bridge:place_item": {
+										"run_command": {
+											"command": [
+												"say Redstone block set",
+												"setblock ~ ~-1 ~ redstone_block"
+											],
+											"target": "self"
+										},
+										"set_block_property": {
+											"bridge:pedestal_activated": true
+										},
+										"play_sound": {
+											"sound": "block.end_portal.spawn",
+											"target": "self"
+										}
+									},
+									"bridge:deactivate_portal": {
+										"set_block_property": {
+											"bridge:pedestal_activated": false
+										},
+										"run_command": {
+											"command": [
+												"say Pedestal reset",
+												"setblock ~ ~-1 ~ air"
+											],
+											"target": "self"
+										}
+									}
+								},
+								"key": "bridge:deactivate_portal",
+								"children": [
+									{
+										"key": "set_block_property",
+										"is_minified": true,
+										"children": {
+											"bridge:pedestal_activated": false
+										}
+									},
+									{
+										"open": {
+											"set_block_property": {
+												"bridge:pedestal_activated": false
+											},
+											"run_command": {
+												"command": [
+													"say Pedestal reset",
+													"setblock ~ ~-1 ~ air"
+												],
+												"target": "self"
+											}
+										},
+										"key": "run_command",
+										"children": [
+											{
+												"open": {
+													"command": [
+														"say Pedestal reset",
+														"setblock ~ ~-1 ~ air"
+													],
+													"target": "self"
+												},
+												"key": "command",
+												"is_minified": true,
+												"children": [
+													"say Pedestal reset",
+													"setblock ~ ~-1 ~ air"
+												]
+											},
+											{
+												"data": "self",
+												"key": "target"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "bridge:pedestal_block",
+								"is_experimental": true,
+								"properties": {
+									"bridge:pedestal_activated": [
+										false,
+										true
+									]
+								}
+							},
+							"components": {
+								"minecraft:destroy_time": 99999999,
+								"minecraft:explosion_resistance": 99999999999,
+								"minecraft:map_color": "#534C4C",
+								"minecraft:immovable": true,
+								"minecraft:display_name": "Pedestal_Block",
+								"minecraft:on_interact": {
+									"event": "bridge:place_item",
+									"condition": "query.get_equipped_item_name == 'shears'",
+									"target": "other"
+								},
+								"minecraft:block_light_emission": 0.9,
+								"minecraft:placement_filter": {
+									"conditions": [
+										{
+											"allowed_faces": [
+												"up"
+											]
+										}
+									]
+								},
+								"minecraft:geometry": "geometry.advtoolspedblock",
+								"minecraft:material_instances": {
+									"*": {
+										"texture": "bridge_pedestal_block",
+										"render_method": "alpha_test"
+									}
+								},
+								"minecraft:pick_collision": {
+									"origin": [
+										-8,
+										0,
+										-8
+									],
+									"size": [
+										16,
+										9,
+										16
+									]
+								},
+								"minecraft:entity_collision": {
+									"origin": [
+										-8,
+										0,
+										-8
+									],
+									"size": [
+										16,
+										9,
+										16
+									]
+								},
+								"minecraft:unwalkable": true
+							},
+							"events": {
+								"bridge:place_item": {
+									"run_command": {
+										"command": [
+											"say Redstone block set",
+											"setblock ~ ~-1 ~ redstone_block"
+										],
+										"target": "self"
+									},
+									"set_block_property": {
+										"bridge:pedestal_activated": true
+									},
+									"play_sound": {
+										"sound": "block.end_portal.spawn",
+										"target": "self"
+									}
+								},
+								"bridge:deactivate_portal": {
+									"set_block_property": {
+										"bridge:pedestal_activated": false
+									},
+									"run_command": {
+										"command": [
+											"say Pedestal reset",
+											"setblock ~ ~-1 ~ air"
+										],
+										"target": "self"
+									}
+								}
+							},
+							"permutations": [
+								{
+									"condition": "query.block_property('bridge:pedestal_activated') == true",
+									"components": {
+										"minecraft:geometry": "geometry.advtoolspedblockactivated",
+										"minecraft:entity_collision": {
+											"origin": [
+												-8,
+												0,
+												-8
+											],
+											"size": [
+												15,
+												16,
+												16
+											]
+										},
+										"minecraft:on_interact": {
+											"event": "bridge:deactivate_portal",
+											"condition": "query.get_equipped_item_name == 'shears'",
+											"target": "other"
+										},
+										"minecraft:pick_collision": {
+											"origin": [
+												-8,
+												0,
+												-8
+											],
+											"size": [
+												15,
+												16,
+												16
+											]
+										}
+									}
+								}
+							]
+						},
+						"key": "permutations",
+						"children": [
+							{
+								"open": [
+									{
+										"condition": "query.block_property('bridge:pedestal_activated') == true",
+										"components": {
+											"minecraft:geometry": "geometry.advtoolspedblockactivated",
+											"minecraft:entity_collision": {
+												"origin": [
+													-8,
+													0,
+													-8
+												],
+												"size": [
+													15,
+													16,
+													16
+												]
+											},
+											"minecraft:on_interact": {
+												"event": "bridge:deactivate_portal",
+												"condition": "query.get_equipped_item_name == 'shears'",
+												"target": "other"
+											},
+											"minecraft:pick_collision": {
+												"origin": [
+													-8,
+													0,
+													-8
+												],
+												"size": [
+													15,
+													16,
+													16
+												]
+											}
+										}
+									}
+								],
+								"children": [
+									{
+										"open": {
+											"condition": "query.block_property('bridge:pedestal_activated') == true",
+											"components": {
+												"minecraft:geometry": "geometry.advtoolspedblockactivated",
+												"minecraft:entity_collision": {
+													"origin": [
+														-8,
+														0,
+														-8
+													],
+													"size": [
+														15,
+														16,
+														16
+													]
+												},
+												"minecraft:on_interact": {
+													"event": "bridge:deactivate_portal",
+													"condition": "query.get_equipped_item_name == 'shears'",
+													"target": "other"
+												},
+												"minecraft:pick_collision": {
+													"origin": [
+														-8,
+														0,
+														-8
+													],
+													"size": [
+														15,
+														16,
+														16
+													]
+												}
+											}
+										},
+										"data": "query.block_property('bridge:pedestal_activated') == true",
+										"key": "condition"
+									},
+									{
+										"open": {
+											"condition": "query.block_property('bridge:pedestal_activated') == true",
+											"components": {
+												"minecraft:geometry": "geometry.advtoolspedblockactivated",
+												"minecraft:entity_collision": {
+													"origin": [
+														-8,
+														0,
+														-8
+													],
+													"size": [
+														15,
+														16,
+														16
+													]
+												},
+												"minecraft:on_interact": {
+													"event": "bridge:deactivate_portal",
+													"condition": "query.get_equipped_item_name == 'shears'",
+													"target": "other"
+												},
+												"minecraft:pick_collision": {
+													"origin": [
+														-8,
+														0,
+														-8
+													],
+													"size": [
+														15,
+														16,
+														16
+													]
+												}
+											}
+										},
+										"key": "components",
+										"children": [
+											{
+												"data": "geometry.advtoolspedblockactivated",
+												"key": "minecraft:geometry"
+											},
+											{
+												"key": "minecraft:entity_collision",
+												"children": [
+													{
+														"key": "origin",
+														"is_minified": true,
+														"children": [
+															-8,
+															0,
+															-8
+														]
+													},
+													{
+														"open": {
+															"origin": [
+																-8,
+																0,
+																-8
+															],
+															"size": [
+																15,
+																16,
+																16
+															]
+														},
+														"key": "size",
+														"is_minified": true,
+														"children": [
+															15,
+															16,
+															16
+														]
+													}
+												]
+											},
+											{
+												"key": "minecraft:on_interact",
+												"is_minified": true,
+												"children": {
+													"event": "bridge:deactivate_portal",
+													"condition": "query.get_equipped_item_name == 'shears'",
+													"target": "other"
+												}
+											},
+											{
+												"key": "minecraft:pick_collision",
+												"is_minified": true,
+												"children": {
+													"origin": [
+														-8,
+														0,
+														-8
+													],
+													"size": [
+														15,
+														16,
+														16
+													]
+												}
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

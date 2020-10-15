@@ -1,0 +1,28 @@
+{
+	"file_path": "C:\\Users\\ahoer\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs\\Adventure Map Tools\\loot_tables\\test_loot_grown.json",
+	"file_type": "loot_table",
+	"format_version": 0,
+	"cache_content": {
+		"pools": [
+			{
+				"rolls": 1,
+				"entries": [
+					{
+						"type": "item",
+						"name": "minecraft:dye:12",
+						"functions": [
+							{
+								"function": "set_count",
+								"count": {
+									"min": 1,
+									"max": 2
+								}
+							}
+						]
+					}
+				]
+			}
+		]
+	},
+	"file_uuid": "c07f0548_01a6_411e_8536_815bd3d5ac94"
+}

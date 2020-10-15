@@ -1,0 +1,8 @@
+##bridge-file-version: #3
+pack.name=Adventure Map Tools Pack
+pack.description=A Pack  for testing adventure map tools
+tile.bridge:pedestal_block.name.name = Pedestal
+tile.bridge:pedestal_block.name = Pedestal
+tile.bridge:test.name=Test
+
+item.bridge:test_seeds.name=Test Seeds

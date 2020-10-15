@@ -1,0 +1,54 @@
+{
+	"entity": {
+		"BP/entities/player.json": {
+			"events": [
+				"minecraft:gain_bad_omen",
+				"minecraft:clear_add_bad_omen",
+				"minecraft:trigger_raid",
+				"minecraft:remove_raid_trigger"
+			],
+			"bridge_core_tags": [],
+			"identifiers": [
+				"minecraft:player"
+			],
+			"animation_references": [],
+			"families": [
+				"player"
+			],
+			"custom_commands": [],
+			"custom_components": []
+		}
+	},
+	"item": {
+		"BP/items/test_seeds.json": {
+			"identifiers": [
+				"bridge:test_seeds"
+			],
+			"custom_commands": []
+		}
+	},
+	"block": {
+		"BP/blocks/pedestal_block.json": {
+			"identifiers": [
+				"bridge:pedestal_block"
+			],
+			"events": [
+				"bridge:place_item",
+				"bridge:deactivate_portal"
+			],
+			"recipe_tags": [],
+			"custom_components": []
+		},
+		"BP/blocks/test.json": {
+			"identifiers": [
+				"bridge:test"
+			],
+			"events": [
+				"bridge:grow",
+				"bridge:harvest"
+			],
+			"recipe_tags": [],
+			"custom_components": []
+		}
+	}
+}

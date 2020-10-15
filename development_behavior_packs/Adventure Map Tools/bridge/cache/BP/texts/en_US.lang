@@ -1,0 +1,8 @@
+{
+	"file_path": "C:\\Users\\ahoer\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs\\Adventure Map Tools\\texts\\en_US.lang",
+	"file_type": "lang",
+	"format_version": 0,
+	"file_uuid": "f0fdc089_0e30_411d_93b2_a9e427e86dca",
+	"file_version": 3,
+	"cache_content": "pack.name=Adventure Map Tools\r\npack.description=Maps tools for making adventure maps\r\n\r\n\r\ntile.bridge:pedestal_block.name.name = Pedestal\r\ntile.bridge:pedestal_block.name = Pedestal"
+}

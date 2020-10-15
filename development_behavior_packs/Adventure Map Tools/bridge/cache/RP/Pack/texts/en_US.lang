@@ -1,0 +1,8 @@
+{
+	"file_path": "C:\\Users\\ahoer\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_resource_packs\\Adventure Map Tools Pack\\texts\\en_US.lang",
+	"file_type": "client_lang",
+	"format_version": 0,
+	"file_uuid": "dae46029_8173_4314_ac51_250f9d384553",
+	"file_version": 3,
+	"cache_content": "pack.name=Adventure Map Tools Pack\r\npack.description=A Pack  for testing adventure map tools\r\ntile.bridge:pedestal_block.name.name = Pedestal\r\ntile.bridge:pedestal_block.name = Pedestal\r\ntile.bridge:test.name=Test\r\n\r\nitem.bridge:test_seeds.name=Test Seeds"
+}
